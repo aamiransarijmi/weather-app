@@ -1,0 +1,61 @@
+<section class="paddingBoth premiumMainWrap" *ngIf="weatherData">
+  <div class="container">
+    <div class="row justify-content-center align-items-center text-center">
+      <div class="col-md-12">
+        <div class="headingInfo">
+          <h2>Current weather and forecasts in your citys</h2>
+          <p>
+            Plan your days with accurate temperature, humidity, and wind
+            predictions.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-12">
+        <div class="bg-white p-4 p-md-5 rounded shadow">
+          <h3>Sunrise</h3>
+          <p>{{ weatherData.sunrise | date : "shortTime" }}</p>
+        </div>
+        <div class="bg-white p-4 p-md-5 rounded shadow mt-3">
+          <h3>Sunset</h3>
+          <p>{{ weatherData.sunset | date : "shortTime" }}</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 my-md-0 my-3">
+        <div class="bg-white p-4 p-md-5 rounded shadow">
+          <h3>{{ weatherData.date | date : "mediumDate" }}</h3>
+          <img
+            [src]="weatherData?.icon"
+            class="img-fluid"
+            alt="type"
+            width="100px"
+          />
+          <div>
+            <h2 class="feature-heading">
+              {{ weatherData?.temperature
+              }}<sup>{{ isCelcicus ? "°C" : "°F" }}</sup>
+            </h2>
+            <h2 class="feature-heading">
+              {{ weatherData?.cityName | uppercase }}
+            </h2>
+            <p>{{ weatherData?.description | titlecase }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-12">
+        <div class="bg-white p-4 p-md-5 rounded shadow">
+          <h3>Wind speed</h3>
+          <p>{{ weatherData.wind }} m/s</p>
+        </div>
+        <div class="bg-white p-4 p-md-5 rounded shadow mt-3">
+          <h3>Humidity</h3>
+          <p>{{ weatherData.humidity }} %</p>
+        </div>
+      </div>
+      <div class="col-md-12 text-center mt-4">
+        <button class="btn-theme" type="button" (click)="goToForecast()">
+          Forecast for 16 days
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

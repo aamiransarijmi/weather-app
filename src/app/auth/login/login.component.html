@@ -1,0 +1,101 @@
+<div class="bg-light py-3 py-md-5">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6">
+        <div class="bg-white p-4 p-md-5 rounded shadow-sm">
+          <div class="row">
+            <div class="col-12">
+              <div class="text-center mb-5">
+                <a routerLink="/">
+                  <img
+                    src="../assets/images/logo.png"
+                    alt="weather app logo"
+                    width="175"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <form [formGroup]="loginForm">
+            <div class="row gy-3 gy-md-4 overflow-hidden">
+              <div class="col-12">
+                <label class="form-label"
+                  >Email <span class="text-danger">*</span></label
+                >
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="fa fa-envelope"></i>
+                  </span>
+                  <input
+                    type="email"
+                    class="form-control"
+                    formControlName="email"
+                  />
+                </div>
+                <div
+                  *ngIf="
+                    loginForm.get('email')?.touched &&
+                    loginForm.get('email')?.invalid
+                  "
+                  class="text-danger mt-2"
+                >
+                  <small *ngIf="loginForm.get('email')?.errors?.['required']"
+                    >Email is required.</small
+                  >
+                  <small *ngIf="loginForm.get('email')?.errors?.['pattern']"
+                    >Please enter a valid email address.</small
+                  >
+                </div>
+              </div>
+              <div class="col-12">
+                <label for="password" class="form-label"
+                  >Password <span class="text-danger">*</span></label
+                >
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="fa fa-key"></i>
+                  </span>
+                  <input
+                    type="password"
+                    class="form-control"
+                    formControlName="password"
+                  />
+                </div>
+                <div
+                  *ngIf="
+                    loginForm.get('password')?.touched &&
+                    loginForm.get('password')?.invalid
+                  "
+                  class="text-danger mt-2"
+                >
+                  <small
+                    *ngIf="loginForm.get('password')?.errors?.['required']"
+                  >
+                    Password is required.
+                  </small>
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn-theme w-100" type="button" (click)="login()">
+                  Log In
+                </button>
+              </div>
+            </div>
+          </form>
+          <div class="row">
+            <div class="col-12">
+              <hr class="mt-5 mb-4 border-secondary-subtle" />
+              <div
+                class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center"
+              >
+                <button routerLink="/auth/register" class="btn-simple">
+                  Create new account
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

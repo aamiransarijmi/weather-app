@@ -1,0 +1,179 @@
+.footerWrapper {
+  color: var(--dark-1);
+  padding: 60px 0 0;
+  background: var(--white-10);
+  box-shadow: var(--shadow-1);
+  .footerHeading {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .socialIconWrapper {
+    margin-top: 50px;
+    p {
+      margin-bottom: 8px;
+    }
+    i:hover {
+      color: var(--tertiary-1);
+      transition: 0.2s;
+    }
+  }
+  a {
+    color: var(--dark-1);
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+  }
+  ul.listItemList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 200;
+      &:not(:first-child) {
+        margin-top: 20px;
+      }
+      a:hover {
+        color: var(--tertiary-1);
+        padding-left: 4px;
+      }
+    }
+  }
+  .copyRightRow {
+    padding: 32px 0;
+    margin-top: 60px;
+    border-top: 1px solid var(--dark-1);
+  }
+  .copyRightString {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    margin: 0;
+  }
+  ul.termConditionListing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 200;
+      display: inline-block;
+      svg {
+        margin-right: 4px;
+      }
+      &:not(:first-child) {
+        margin-left: 24px;
+      }
+      a:hover {
+        color: var(--tertiary-1);
+      }
+    }
+  }
+}
+
+@media (min-width: 2400px) {
+  .footerWrapper {
+    padding: 100px 0 0;
+    .logoFooter {
+      width: 500px !important;
+    }
+    .footerHeading {
+      font-size: 52px;
+    }
+    .playStoreWrap {
+      margin: 40px 0;
+      img {
+        width: 300px;
+      }
+    }
+    .socialIconWrapper {
+      p {
+        font-size: 44px;
+      }
+      svg {
+        font-size: 36px;
+      }
+    }
+    a {
+      color: var(--white-10);
+      text-decoration: none;
+      transition: 0.3s;
+      display: inline-block;
+    }
+    ul.listItemList {
+      li {
+        font-size: 32px;
+        line-height: normal;
+      }
+    }
+    .copyRightRow {
+      padding: 48px 0;
+      margin-top: 80px;
+      border-width: 2px;
+    }
+    .copyRightString {
+      font-size: 32px;
+      line-height: normal;
+    }
+    ul.termConditionListing {
+      li {
+        font-size: 32px;
+        line-height: normal;
+        svg {
+          margin-right: 12px;
+        }
+        &:not(:first-child) {
+          margin-left: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .footerWrapper {
+    padding: 20px 0 0;
+    .footerHeading {
+      font-size: 15px;
+      margin: 20px 0 12px;
+    }
+    .logoFooter {
+      width: 200px;
+      margin: 20px 0 0;
+    }
+    .playStoreWrap {
+      margin: 20px 0;
+    }
+    .socialIconWrapper {
+      p {
+        margin-bottom: 12px;
+      }
+    }
+    ul.listItemList {
+      li {
+        font-size: 16px;
+        line-height: 22px;
+        &:not(:first-child) {
+          margin-top: 8px;
+        }
+      }
+    }
+    .copyRightRow {
+      padding: 24px 12px;
+      margin-top: 24px;
+      flex-direction: column;
+    }
+    .copyRightString {
+      font-size: 16px;
+      line-height: 22px;
+    }
+    ul.termConditionListing {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 16px;
+    }
+  }
+}

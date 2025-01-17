@@ -1,0 +1,35 @@
+<div class="bg-light py-3 py-md-5 abc">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-12">
+        <button class="btn-theme mb-3" type="button" (click)="goToBack()">
+          <i class="fa fa-angle-left"></i> Back
+        </button>
+      </div>
+      <div class="col-md-12">
+        <div class="text-center pb-3">
+          <h2 class="feature-heading">
+            Forecast for 16 days - {{ cityName | titlecase }}
+          </h2>
+          <p>
+            Plan your days with accurate temperature, humidity, and wind
+            predictions.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="col-md-12 card-wrap-row"
+        *ngIf="weatherData && weatherData.list.length"
+      >
+        @for (forecast of weatherData.list; track forecast.date){
+        <app-forecast
+          [forecast]="forecast"
+          class="card-item"
+          [isCelcicus]="isCelcicus"
+        ></app-forecast>
+        }
+      </div>
+    </div>
+  </div>
+</div>

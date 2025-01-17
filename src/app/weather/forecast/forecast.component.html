@@ -1,0 +1,16 @@
+<div class="bg-white p-4 p-md-5 rounded shadow text-center">
+  <h3>{{ forecast.date | date : "mediumDate" }}</h3>
+  <img [src]="forecast?.icon" class="img-fluid" alt="type" width="100px" />
+  <div>
+    <p>
+      Day : {{ forecast?.temp?.day }} <sup>{{ isCelcicus ? "°C" : "°F" }}</sup>
+    </p>
+    <p>
+      Night: {{ forecast?.temp?.night }}
+      <sup class="fw-bold">{{ isCelcicus ? "°C" : "°F" }}</sup>
+    </p>
+    <p *ngIf="forecast?.wind">Wind Speed {{ forecast.wind }} m/s</p>
+    <p *ngIf="forecast.humidity">Humidity {{ forecast.humidity }} %</p>
+    <p>{{ forecast?.description | titlecase }}</p>
+  </div>
+</div>

@@ -1,0 +1,193 @@
+<div class="bg-light py-3 py-md-5">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6">
+        <div class="bg-white p-4 p-md-5 rounded shadow-sm">
+          <div class="row">
+            <div class="col-12">
+              <div class="text-center mb-5">
+                <a routerLink="/">
+                  <img
+                    src="../assets/images/logo.png"
+                    alt="weather app logo"
+                    width="175"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <form [formGroup]="registerForm">
+            <div class="row gy-3 gy-md-4 overflow-hidden">
+              <div class="col-12">
+                <label class="form-label"
+                  >First Name <span class="text-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="firstName"
+                />
+                <div
+                  *ngIf="
+                    registerForm.get('firstName')?.touched &&
+                    registerForm.get('firstName')?.invalid
+                  "
+                  class="text-danger mt-2"
+                >
+                  <small
+                    *ngIf="registerForm.get('firstName')?.errors?.['required']"
+                    >Firstname is required.</small
+                  >
+                </div>
+              </div>
+              <div class="col-12">
+                <label class="form-label"
+                  >Last Name <span class="text-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="lastName"
+                />
+                <div
+                  *ngIf="
+                    registerForm.get('lastName')?.touched &&
+                    registerForm.get('lastName')?.invalid
+                  "
+                  class="text-danger mt-2"
+                >
+                  <small
+                    *ngIf="registerForm.get('lastName')?.errors?.['required']"
+                    >Lastname is required.</small
+                  >
+                </div>
+              </div>
+              <div class="col-12">
+                <label class="form-label"
+                  >Email <span class="text-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="email"
+                />
+                <div
+                  *ngIf="
+                    registerForm.get('email')?.touched &&
+                    registerForm.get('email')?.invalid
+                  "
+                  class="text-danger mt-2"
+                >
+                  <small *ngIf="registerForm.get('email')?.errors?.['required']"
+                    >Email is required.</small
+                  >
+                  <small *ngIf="registerForm.get('email')?.errors?.['pattern']"
+                    >Please enter a valid email address.</small
+                  >
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label"
+                  >Password <span class="text-danger">*</span></label
+                >
+                <div class="input-group">
+                  <input
+                    [type]="show.password ? 'text' : 'password'"
+                    class="form-control"
+                    formControlName="password"
+                  />
+                  <span
+                    class="input-group-text"
+                    (click)="togglePasswordVisibility()"
+                  >
+                    <i
+                      class="fa"
+                      [ngClass]="show.password ? 'fa-eye' : 'fa-eye-slash'"
+                    ></i>
+                  </span>
+                </div>
+                <div
+                  *ngIf="
+                    registerForm.get('password')?.touched &&
+                    registerForm.get('password')?.invalid
+                  "
+                  class="text-danger mt-2"
+                >
+                  <small
+                    *ngIf="registerForm.get('password')?.errors?.['required']"
+                  >
+                    Password is required.
+                  </small>
+                  <small
+                    *ngIf="registerForm.get('password')?.hasError('minlength')"
+                  >
+                    Password must be at least 8 characters long.
+                  </small>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label"
+                  >Confirm Password <span class="text-danger">*</span></label
+                >
+                <div class="input-group">
+                  <input
+                    [type]="show.confirm ? 'text' : 'password'"
+                    class="form-control"
+                    formControlName="confirmPassword"
+                  />
+                  <span
+                    class="input-group-text"
+                    (click)="toggleConfirmPasswordVisibility()"
+                  >
+                    <i
+                      class="fa"
+                      [ngClass]="show.confirm ? 'fa-eye' : 'fa-eye-slash'"
+                    ></i>
+                  </span>
+                </div>
+                <div
+                  *ngIf="
+                    registerForm.get('confirmPassword')?.touched &&
+                    registerForm.get('confirmPassword')?.invalid
+                  "
+                  class="text-danger mt-2"
+                >
+                  <small
+                    *ngIf="registerForm.get('confirmPassword')?.errors?.['required']"
+                  >
+                    Confirm Password is required.
+                  </small>
+                  <small
+                    *ngIf="registerForm.get('confirmPassword')?.errors?.['mustMatch']"
+                  >
+                    Password and Confirm Password is required.
+                  </small>
+                </div>
+              </div>
+              <div class="col-12">
+                <button
+                  class="btn-theme w-100"
+                  type="button"
+                  (click)="register()"
+                >
+                  Create new account
+                </button>
+              </div>
+            </div>
+          </form>
+          <div class="row">
+            <div class="col-12">
+              <hr class="mt-5 mb-4 border-secondary-subtle" />
+              <div
+                class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center"
+              >
+                <button routerLink="/auth" class="btn-simple">Log In</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+.abc {
+  background: url("/assets/images/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.card-wrap-row {
+  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card-item {
+  width: calc(25% - 15px);
+}
+@media (max-width: 991px) {
+  .card-item {
+    width: calc(50% - 10px);
+  }
+}
+@media (max-width: 420px) {
+  .card-item {
+    width: 100%;
+  }
+}

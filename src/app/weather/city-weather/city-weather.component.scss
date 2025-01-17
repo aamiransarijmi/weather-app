@@ -1,0 +1,73 @@
+.premiumMainWrap {
+  background: url("/assets/images/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  .headingInfo {
+    margin-bottom: 32px;
+    color: var(--black-10);
+    h2 {
+      font-size: 24px;
+      line-height: 36px;
+      font-weight: 700;
+      margin: 0;
+    }
+    p {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24px;
+      margin: 0;
+    }
+  }
+}
+h3 {
+  font-size: 24px;
+  font-weight: 200;
+}
+p {
+  font-size: 20px;
+  font-weight: 500;
+}
+@media (min-width: 2400px) {
+  .premiumMainWrap {
+    .headingInfo {
+      h2 {
+        font-size: 62px;
+        line-height: normal;
+      }
+      p {
+        font-size: 36px;
+        line-height: normal;
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .premiumMainWrap {
+    .headingInfo {
+      h2 {
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 600;
+      }
+      p {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+@media (max-width: 320px) {
+  .premiumMainWrap {
+    .headingInfo {
+      h2 {
+        font-size: 18px;
+        line-height: 26px;
+      }
+      p {
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
+  }
+}

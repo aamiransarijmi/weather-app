@@ -1,0 +1,47 @@
+<div class="bg-light py-3 py-md-5">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6">
+        <div class="bg-white p-5 p-md-5 rounded shadow-sm">
+          <form [formGroup]="weatherForm" (ngSubmit)="weatherInfo()">
+            <div class="row gy-3 gy-md-4 overflow-hidden">
+              <div class="col-12">
+                <label class="form-label"
+                  >Search for Weather: <span class="text-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="location"
+                  placeholder="Please input a location"
+                />
+                <div
+                  *ngIf="
+                    weatherForm.get('location')?.touched &&
+                    weatherForm.get('location')?.invalid
+                  "
+                  class="text-danger mt-2"
+                >
+                  <small
+                    *ngIf="weatherForm.get('location')?.errors?.['required']"
+                    >Location is required.</small
+                  >
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn-theme w-100" type="submit">
+                  Search for the weather
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-city-weather
+  [weatherData]="weatherData"
+  *ngIf="weatherData"
+  (detail)="detail()"
+></app-city-weather>

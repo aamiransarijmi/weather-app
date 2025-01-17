@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/">
+    <img src="../assets/images/logo.png" alt="logo" width="100" />
+    Weather App
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    (click)="toggleCollapse()"
+    aria-controls="navbarNav"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div
+    class="collapse navbar-collapse"
+    [ngClass]="{ show: !isCollapsed }"
+    id="navbarNav"
+  >
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/">News</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/">Contact</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/">Offer</a>
+      </li>
+    </ul>
+    <div class="d-flex gap-2 action-button">
+      <button
+        type="button"
+        class="btn-theme btn-theme-icon border-r-50"
+        *ngIf="isLogin"
+        (click)="changeType()"
+        title="Temperature Type"
+      >
+        {{ isCelcicus ? "°C" : "°F" }}
+      </button>
+      <button type="button" class="btn-theme" (click)="action()">
+        {{ isLogin ? "Log out" : "Login/SignUp" }}
+      </button>
+    </div>
+  </div>
+</nav>
